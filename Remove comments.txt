@@ -1,0 +1,21 @@
+import java.io.PrintWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+class Cleaner3
+{
+	public static void main(String args[]) throws IOException
+	{
+		String content;
+
+		content = new String(Files.readAllBytes(Paths.get("Test.java")));
+
+		String ss=(content.replaceAll("(//.*)","")); 
+	
+		PrintWriter writer = new PrintWriter("Test5.java", "UTF-8");
+		writer.println(ss);
+		System.out.println("Successfull");
+		writer.close();
+	}
+}

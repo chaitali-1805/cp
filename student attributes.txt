@@ -1,0 +1,65 @@
+import java.util.Scanner;
+import java.time.*;
+
+class Student_main
+{
+	public static void main(String args[])
+	{
+		int r,m;
+		double h,w;
+		String name,DOB;
+		Scanner sc=new Scanner(System.in);
+		Student[] stud=new Student[10];
+		String d[]=new String[5];
+		for(int i=0;i<2;i++)
+		{
+			System.out.println("Enter roll no, Name, DOB,weight, height, marks:");
+			r=sc.nextInt();
+			name=sc.next();
+			DOB=sc.next();
+			w=sc.nextDouble();
+			h=sc.nextDouble();
+			m=sc.nextInt();
+			stud[i]=new Student(r,name,DOB,w,h,m);
+		}
+
+		for(int i=0;i<2;i++)
+		{
+			stud[i].display();
+		}
+
+		for(int i=0;i<2;i++)
+		{
+			d=stud[i].DOB.split("-");
+			LocalDate l=LocalDate.of(Integer.parseInt(d[0]), Integer.parseInt(d[1]), Integer.parseInt(d[2]));
+			LocalDate now=LocalDate.now();
+			Period diff=Period.between(l,now);
+			if(diff.getYears()==19 & stud[i].w>90.5 & stud[i].h<172)
+			{
+				System.out.println("Name:"+stud[i].name+"\tRoll number:"+stud[i].r);
+			}
+		}
+	}
+}
+
+class Student
+{
+	int r,m;
+	double h,w;
+	String name,DOB;
+	Student(int r, String name, String DOB, double w, double h, int m)
+	{
+		this.r=r;
+		this.name=name;
+		this.DOB=DOB;
+		this.w=w;
+		this.h=h;
+		this.m=m;
+	}
+
+	void display()
+	{
+		System.out.println("Student Info:");
+		System.out.println("Roll number:"+r+"\n"+"Name:"+name+"\n"+"DOB"+DOB+"\n"+"Weight:"+w+"\n"+"Height"+h+"\n"+"Marks"+m+"\n");
+	}
+}

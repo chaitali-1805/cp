@@ -1,0 +1,38 @@
+import java.util.*;
+import java.io.*;
+class Search
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		BufferedReader br=new BufferedReader(new FileReader("Csv_reader.csv"));
+		String l[]=new String [5];
+		int c=-1,flag=0;
+		System.out.println("Enter name:");
+		String n=sc.next();
+		while(true)
+		{
+			String line=br.readLine();
+			c++;
+			if(line==null)
+			{
+				break;
+			}
+			else
+			{
+				l=line.split(",");
+				if(l[0].equals(n))
+				{
+					flag=1;
+					System.out.println(line+":"+c);
+				}
+			}
+		}
+
+	if(flag!=1)
+	{
+		System.out.println("Name does not exist");
+	}
+
+	}
+}

@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+int main()
+{
+    int T;
+    scanf("%d",&T);
+    while(T>0)
+    {
+        long n1,n,rev = 0;
+        scanf("%d",&n1);
+        int carry = 0;
+        while(1)
+        {
+            n = n1;
+            rev = 0;
+            //Reverse
+            while(n1>0)
+            {
+                rev = rev*10 + (n1%10);
+                n1 = n1/10;
+            }
+            //Check Pallindrome
+            if(n == rev)
+            {
+                break;
+            }
+            else
+            {
+                n1 = rev + n;
+                carry++;
+
+            }
+        }
+        printf("%d %d\n",carry,n);
+        T--;
+    }
+    return 0;
+}

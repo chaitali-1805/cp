@@ -1,0 +1,7 @@
+#Use formula n(n-1)(n-2)(n-3) + n(n-1)/2 +1
+n = int(input())
+while n>0:
+    no = int(input())
+    ans = int(no*(no-1)*(no-2)*(no-3)/24) + int(no*(no-1)/2) + 1
+    print(ans)
+    n-=1

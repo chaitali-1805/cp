@@ -1,0 +1,20 @@
+
+import java.io.PrintWriter;
+import java.io.IOException;
+
+import java.io.*;
+class FileMerge2
+{
+	public static void main(String args[]) throws IOException
+	{
+		String content,content1;
+
+		content = new String(Files.readAllBytes(Paths.get("File1.txt")));
+		content1 = new String(Files.readAllBytes(Paths.get("File2.txt"))); 	
+		PrintWriter writer = new PrintWriter("File4.txt", "UTF-8");
+		writer.println(content);
+		writer.println(content1);
+		System.out.println("Successfull");
+		writer.close();
+	}
+}

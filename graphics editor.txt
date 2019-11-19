@@ -1,0 +1,134 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#define u 72
+#define d 80
+#define r 77
+#define l 75
+#define cz 26
+#define ul 71
+#define ur 79
+#define dl 73
+#define dr 81
+#define g 103
+#define e 101
+#define f 102
+#define h 103
+void main()
+{
+	int gd=DETECT,gm,ch,ch1,i,row=50,col=50;
+	clrscr();
+	detectgraph(&gd,&gm);
+	initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+	putpixel(col,row,WHITE);
+	while((ch=getch())!=f)
+	{
+	if((ch1=getch())==g)
+	{
+	while((ch1=getch())!=cz)
+	{
+		//printf("smxbjsb");
+		if(ch1==u)
+		{
+			row--;
+			putpixel(col,row,RED);
+		}
+		if(ch1==d)
+		{
+			row++;
+			putpixel(col,row,WHITE);
+		}
+		if(ch1==r)
+		{
+			col++;
+			putpixel(col,row,GREEN);
+		}
+		if(ch1==l)
+		{
+			col--;
+			putpixel(col,row,YELLOW);
+		}
+		if(ch1==ul)
+		{
+			row--;
+			col--;
+			putpixel(col,row,RED);
+		}
+		if(ch1==ur)
+		{
+			row--;
+			col++;
+			putpixel(col,row,WHITE);
+		}
+		if(ch1==dl)
+		{
+			row++;
+			col--;
+			putpixel(col,row,GREEN);
+		}
+		if(ch1==dr)
+		{
+			col++;
+			row++;
+			putpixel(col,row,YELLOW);
+		}
+
+	}
+	}
+	else if((ch=getch())==e)
+	{
+		while((ch=getch())!=cz)
+	{
+		if(ch==u)
+		{
+			row--;
+			putpixel(col,row,BLACK);
+		}
+		if(ch==d)
+		{
+			row++;
+			putpixel(col,row,BLACK);
+		}
+		if(ch==r)
+		{
+			col++;
+			putpixel(col,row,BLACK);
+		}
+		if(ch==l)
+		{
+			col--;
+			putpixel(col,row,BLACK);
+		}
+		if(ch==ul)
+		{
+			row--;
+			col--;
+			putpixel(col,row,BLACK);
+		}
+		if(ch==ur)
+		{
+			row--;
+			col++;
+			putpixel(col,row,BLACK);
+		}
+		if(ch==dl)
+		{
+			row++;
+			col--;
+			putpixel(col,row,BLACK);
+		}
+		if(ch==dr)
+		{
+			col++;
+			row++;
+			putpixel(col,row,BLACK);
+		}
+	}
+	}
+
+	}
+
+
+
+	getch();
+}

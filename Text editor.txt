@@ -1,0 +1,86 @@
+#include<graphics.h>
+#include<conio.h>
+#include<stdio.h>
+
+#define ctrl_z 26
+#define up 72
+#define down 80
+#define left 75
+#define right 77
+#define home 71
+#define end 79
+#define pg_up 73
+#define pg_down 81
+#define esc 27
+#define D 100
+#define E 101
+#define bsc 8
+#define enter 13
+
+void main()
+{
+	int gd,gm,ch,ex;
+	char buff[25][80];
+	int row = 1,col=1;
+	clrscr();
+       //	detectgraph(&gd,&gm);
+       //	initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+      //	putpixel(row,col,RED);
+	gotoxy(col,row);
+	while((ch=getch())!=esc)
+	{
+		if(ch==up)
+		{
+
+			row--;
+			gotoxy(col,row);
+
+		}
+	       else if(ch==bsc)
+		{
+			col--;
+			gotoxy(col,row);
+		      //	putch(8);
+		      printf("%c",32);
+		      gotoxy(col,row);
+
+		}
+		else if(ch==down)
+		{
+			row++;
+			gotoxy(col,row);
+		}
+	       else if(ch==left)
+		{
+			col--;
+			gotoxy(col,row);
+		}
+		else if(ch==right)
+		{
+			col++;
+			gotoxy(col,row);
+
+		}
+		else if(ch== enter)
+		{
+			col=1;
+			row++;
+			gotoxy(col,row);
+			buff[row][col] = ch;
+		}
+		else
+		{
+		gotoxy(col,row);
+		putch(ch);
+		col++;
+		buff[row][col] = ch;
+		 }
+	       //	printf("jjjj");
+	}
+	putpixel(10,10,GREEN);
+
+}
+
+
+
+

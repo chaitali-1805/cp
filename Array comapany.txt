@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class Company
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int smallest=99999;
+		String name[]=new String[7];
+		int quote[]=new int[6];
+		int arr[]=new int[2];
+		String small1="",InputValue;
+		for(int i=0;i<arr.length;i++)
+		{
+			InputValue=sc.nextLine();
+			String[] Value=InputValue.split(" ");
+			 name[i]=Value[0];
+			quote[i]=Integer.parseInt(Value[2]);
+		}
+		for(int j=0;j<arr.length;j++)
+		{
+			if(quote[j]<smallest)
+			{
+				smallest=quote[j];
+				small1=name[j];
+			}
+		}
+		System.out.println(small1+smallest);
+	}
+}
+		

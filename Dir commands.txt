@@ -1,0 +1,34 @@
+import java.io.File;
+
+class FileList
+{
+
+		public static void main(String args[])
+		{
+			FileList ob=new FileList();
+			int index=0;
+			String directorypath="C:\\Users\\Mr Prakash\\Desktop\\Java_1st_CA";
+			File dirname=new File(directorypath);
+			File[] arr=dirname.listFiles();
+			System.out.println(dirname);
+			ob.display(arr,index);
+		}	
+		void display(File[] arr,int index)
+		{	
+			if(index==arr.length)
+				return;
+			if(arr[index].isDirectory())
+			{
+				System.out.println("[" + arr[index].getName() + "]");
+				display(arr[index].listFiles(),0);
+			}
+
+			else if(arr[index].isFile())
+			{
+				System.out.println(arr[index].getName());
+				display(arr,++index);
+			}
+								
+		}
+	
+}

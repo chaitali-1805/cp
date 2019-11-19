@@ -1,0 +1,22 @@
+steps = []
+product = 1
+while product < 4294967295:
+    product *= 9
+    steps.append(product)
+    product *= 2
+    steps.append(product)
+
+while(1):
+    inp = int(input())
+    if inp:
+        print(inp)
+        for i, n in enumerate(steps):
+            if n >= inp:
+                break
+        if i % 2 == 0:
+            result = 'Stan wins.'
+        else:
+            result = 'Ollie wins.'
+        print(result)
+    else:
+        break

@@ -1,0 +1,19 @@
+lst=[]
+while True:
+    m,n=map(int,input().split())
+    if(m==0 and n==0):
+        break
+    else:
+        a=0
+        b=1
+        count=0
+        while True:
+            c=a+b
+            a,b=b,c
+            if(c>=m and c<=n):
+                count+=1
+            elif(c>100):
+                break
+        lst.append(count)
+
+print(lst)

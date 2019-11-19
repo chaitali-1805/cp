@@ -1,0 +1,11 @@
+while(1):
+    n = int(input())
+    if n:
+
+        res = [2, 5, 13]
+
+        for i in range(3, 1000):
+            res.append(2 * res[i - 1] + res[i - 2] + res[i - 3])
+        print(res[int(n) - 1])
+    else:
+        break

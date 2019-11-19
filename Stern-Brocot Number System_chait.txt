@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+int main()
+{
+    int N,D;
+    int a=0,b=1,c=1,d=1,e=1,f=1;
+    while(scanf("%d %d",&N,&D) == 2)
+    {
+        int a=0,b=1,c=1,d=0,e=1,f=1;
+        if(N==1 && D==1)
+        {
+            break;
+        }
+        while(1)
+        {
+            if(e==N && f==D)
+                break;
+            if(e*D > f*N)
+            {
+                b = e;
+                d = f;
+                printf("L");
+            }
+            else
+            {
+                a = e;
+                c = f;
+                printf("R");
+            }
+            e = a+b;
+            f = c+d;
+        }
+        printf("\n");
+    }
+    return 0;
+}

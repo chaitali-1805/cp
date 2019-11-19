@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+class Sparse
+{
+	public static void main(String args[])	
+	{
+		Scanner sc=new Scanner(System.in);
+		int r,c;
+		int sparse[][]=new int[10][10];
+		int sparse_row[]=new int[10];
+		int sparse_col[]=new int[10];
+		int sparse_matrix[][]=new int[10][10];
+		System.out.println("Enter no of rows:");
+		r=sc.nextInt();
+		System.out.println("Enter no of columns:");
+		c=sc.nextInt();
+		System.out.println("Enter the elements of matrix:");
+		for(int i=0;i<r;i++)
+		{
+			for(int j=0;j<c;j++)
+			{
+				sparse[i][j]=sc.nextInt();
+			}
+		}
+
+		int k=0,l=0,m=0,count=0;
+		for(int i=0;i<r;i++)
+		{
+			for(int j=0;j<c;j++)
+			{
+				if(sparse[i][j]!=0)
+				{
+					sparse_row[k]=i;
+
+					
+					sparse_col[l]=j;
+					
+					sparse_matrix[k][l]=sparse[i][j];
+					System.out.print(sparse_row[k]+"\t");
+					
+					System.out.print(sparse_col[l]+"\t");
+					System.out.print(sparse_matrix[k][l]);
+					System.out.println("\n");
+					k++;
+					l++;
+				}
+			}
+		}
+
+	}
+}
+		
